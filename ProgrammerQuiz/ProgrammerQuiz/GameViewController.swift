@@ -29,8 +29,7 @@ class GameViewController: UIViewController {
     
     
     @IBAction func goBackButton(_ sender: Any) {
-        
-        _ = navigationController?.popViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     /*

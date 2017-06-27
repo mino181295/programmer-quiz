@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3317C4FE1F02779200E7E83D /* HighscoresCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317C4FD1F02779200E7E83D /* HighscoresCollectionViewController.swift */; };
+		3317C5061F02925D00E7E83D /* Question+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317C5021F02925D00E7E83D /* Question+CoreDataClass.swift */; };
+		3317C5071F02925D00E7E83D /* Question+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317C5031F02925D00E7E83D /* Question+CoreDataProperties.swift */; };
+		3317C5081F02925D00E7E83D /* Answer+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317C5041F02925D00E7E83D /* Answer+CoreDataClass.swift */; };
+		3317C5091F02925D00E7E83D /* Answer+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3317C5051F02925D00E7E83D /* Answer+CoreDataProperties.swift */; };
 		3322DEF51F02382400FC96BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322DEF41F02382400FC96BF /* AppDelegate.swift */; };
 		3322DEF71F02382400FC96BF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322DEF61F02382400FC96BF /* MenuViewController.swift */; };
 		3322DEFA1F02382400FC96BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3322DEF81F02382400FC96BF /* Main.storyboard */; };
@@ -18,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3317C4FD1F02779200E7E83D /* HighscoresCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoresCollectionViewController.swift; sourceTree = "<group>"; };
+		3317C5021F02925D00E7E83D /* Question+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3317C5031F02925D00E7E83D /* Question+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Question+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3317C5041F02925D00E7E83D /* Answer+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3317C5051F02925D00E7E83D /* Answer+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Answer+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3322DEF11F02382400FC96BF /* ProgrammerQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgrammerQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3322DEF41F02382400FC96BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3322DEF61F02382400FC96BF /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -60,15 +70,20 @@
 		3322DEF31F02382400FC96BF /* ProgrammerQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				3317C5021F02925D00E7E83D /* Question+CoreDataClass.swift */,
+				3317C5031F02925D00E7E83D /* Question+CoreDataProperties.swift */,
+				3317C5041F02925D00E7E83D /* Answer+CoreDataClass.swift */,
+				3317C5051F02925D00E7E83D /* Answer+CoreDataProperties.swift */,
 				3322DEF41F02382400FC96BF /* AppDelegate.swift */,
-				3322DEF61F02382400FC96BF /* MenuViewController.swift */,
 				3322DEF81F02382400FC96BF /* Main.storyboard */,
+				3322DEF61F02382400FC96BF /* MenuViewController.swift */,
 				3322DF0B1F02527000FC96BF /* CreditsViewController.swift */,
 				3322DF091F024CB700FC96BF /* GameViewController.swift */,
-				3322DEFE1F02382400FC96BF /* Assets.xcassets */,
+				3317C4FD1F02779200E7E83D /* HighscoresCollectionViewController.swift */,
 				3322DF001F02382400FC96BF /* LaunchScreen.storyboard */,
 				3322DF031F02382400FC96BF /* Info.plist */,
 				3322DEFB1F02382400FC96BF /* ProgrammerQuiz.xcdatamodeld */,
+				3322DEFE1F02382400FC96BF /* Assets.xcassets */,
 			);
 			path = ProgrammerQuiz;
 			sourceTree = "<group>";
@@ -147,7 +162,12 @@
 			files = (
 				3322DF0A1F024CB700FC96BF /* GameViewController.swift in Sources */,
 				3322DEF71F02382400FC96BF /* MenuViewController.swift in Sources */,
+				3317C5061F02925D00E7E83D /* Question+CoreDataClass.swift in Sources */,
+				3317C5091F02925D00E7E83D /* Answer+CoreDataProperties.swift in Sources */,
+				3317C5081F02925D00E7E83D /* Answer+CoreDataClass.swift in Sources */,
 				3322DEF51F02382400FC96BF /* AppDelegate.swift in Sources */,
+				3317C4FE1F02779200E7E83D /* HighscoresCollectionViewController.swift in Sources */,
+				3317C5071F02925D00E7E83D /* Question+CoreDataProperties.swift in Sources */,
 				3322DEFD1F02382400FC96BF /* ProgrammerQuiz.xcdatamodeld in Sources */,
 				3322DF0C1F02527000FC96BF /* CreditsViewController.swift in Sources */,
 			);
@@ -311,6 +331,7 @@
 				3322DF081F02382400FC96BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
