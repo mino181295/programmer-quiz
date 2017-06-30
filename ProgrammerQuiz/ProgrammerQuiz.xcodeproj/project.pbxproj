@@ -20,6 +20,7 @@
 		3322DF021F02382400FC96BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3322DF001F02382400FC96BF /* LaunchScreen.storyboard */; };
 		3322DF0A1F024CB700FC96BF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322DF091F024CB700FC96BF /* GameViewController.swift */; };
 		3322DF0C1F02527000FC96BF /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322DF0B1F02527000FC96BF /* CreditsViewController.swift */; };
+		339AA4AA1F06478C007B6ADD /* MenuControllerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AA4A91F06478C007B6ADD /* MenuControllerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3322DF031F02382400FC96BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3322DF091F024CB700FC96BF /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		3322DF0B1F02527000FC96BF /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
+		339AA4A91F06478C007B6ADD /* MenuControllerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuControllerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				3322DEF41F02382400FC96BF /* AppDelegate.swift */,
 				3322DEF81F02382400FC96BF /* Main.storyboard */,
 				3322DEF61F02382400FC96BF /* MenuViewController.swift */,
+				339AA4A91F06478C007B6ADD /* MenuControllerHelper.swift */,
 				3322DF0B1F02527000FC96BF /* CreditsViewController.swift */,
 				3322DF091F024CB700FC96BF /* GameViewController.swift */,
 				3317C4FD1F02779200E7E83D /* HighscoresCollectionViewController.swift */,
@@ -164,6 +167,7 @@
 				3322DEF71F02382400FC96BF /* MenuViewController.swift in Sources */,
 				3317C5061F02925D00E7E83D /* Question+CoreDataClass.swift in Sources */,
 				3317C5091F02925D00E7E83D /* Answer+CoreDataProperties.swift in Sources */,
+				339AA4AA1F06478C007B6ADD /* MenuControllerHelper.swift in Sources */,
 				3317C5081F02925D00E7E83D /* Answer+CoreDataClass.swift in Sources */,
 				3322DEF51F02382400FC96BF /* AppDelegate.swift in Sources */,
 				3317C4FE1F02779200E7E83D /* HighscoresCollectionViewController.swift in Sources */,

@@ -16,7 +16,22 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
+        if entityIsEmpty(entity: "Question") {
+            clearCoreData()
+            createData()
+        } else {
+            clearCoreData()
+            createData()
+        }
+        
+        var questions = loadQuestions()
+        questions.shuffle()
+        
+        for question in questions {
+            print(question.text!)
+        }
     }
     
     func setupButton(button : UIButton, cornerRadius : CGFloat, borderWidth : CGFloat, borderColor : UIColor){
@@ -24,18 +39,28 @@ class MenuViewController: UIViewController {
         button.layer.borderWidth = borderWidth
         button.layer.borderColor = borderColor.cgColor
     }
-    
-    func setupView() {
-        setupButton(button: playButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
-        setupButton(button: highscoresButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
-        setupButton(button: creditsButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
     }
 
+    func setupView() {
+        setupButton(button: playButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
+        setupButton(button: highscoresButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
+        setupButton(button: creditsButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
+    }
+    
+}
+//Add shuffle to arrays randomizing the order of the questions/answers..
+extension Array {
+    mutating func shuffle() {
+        guard count > 1 else {return}
+        for shufflingIndex in (1..<count).reversed() {
+            let randomIndex = Int(arc4random_uniform(UInt32(shufflingIndex)))
+            swap(&self[shufflingIndex], &self[randomIndex])
+        }
+    }
 }
 
