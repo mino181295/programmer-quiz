@@ -84,35 +84,6 @@ extension MenuViewController {
         question.addToAnswers(answers)
     }
     
-    public func loadQuestions() -> [Question]{
-        if context != nil {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
-            do {
-                let questions = try(context?.fetch(fetchRequest)) as? [Question]
-                return questions!
-            } catch let err {
-                print(err)
-            }
-        }
-        
-        return []
-    }
-    
-    public func loadAnswers(forQuestion : Int16) -> [Answer]{
-        if context != nil {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
-            fetchRequest.predicate = NSPredicate(format: "idQuestion==%@", NSNumber(value: Int(forQuestion)))
-            do {
-                let question = try(context?.fetch(fetchRequest)) as! [Question]
-                let answers = question[0].answers?.allObjects as! [Answer]
-                return answers
-            } catch let err {
-                print(err)
-            }
-        }
-        
-        return []
-    }
     
     public func entityIsEmpty(entity: String) -> Bool	{
         if context != nil {
@@ -130,5 +101,69 @@ extension MenuViewController {
             }
         }
         return true
+    }
+}
+
+extension GameViewController {
+    
+    public var delegate : AppDelegate? {
+        return UIApplication.shared.delegate as? AppDelegate
+    }
+    public var context : NSManagedObjectContext? {
+        return delegate?.managedObjectContext
+    }
+    
+    public func loadQuestions() -> [Question]{
+        if context != nil {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
+            do {
+                let questions = try(context?.fetch(fetchRequest)) as? [Question]
+                return questions!
+            } catch let err {
+                print(err)
+            }
+        }
+        return []
+    }
+    
+    public func loadAnswers(forQuestion : Int16) -> [Answer]{
+        if context != nil {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Question")
+            fetchRequest.predicate = NSPredicate(format: "idQuestion==%@", NSNumber(value: Int(forQuestion)))
+            do {
+                let question = try(context?.fetch(fetchRequest)) as! [Question]
+                let answers = question[0].answers?.allObjects as! [Answer]
+                return answers
+            } catch let err {
+                print(err)
+            }
+        }
+        return []
+    }
+    
+    func addScore(value : Int16){
+        let score = NSEntityDescription.insertNewObject(forEntityName: "Score", into: context!) as! Score
+        score.value = Int32(value)
+        score.date = NSDate()
+        
+        do {
+            try(context?.save())
+        } catch let err {
+            print(err)
+        }
+        
+    }
+    
+}
+
+
+//Add shuffle to arrays randomizing the order of the questions/answers..
+extension Array {
+    mutating func shuffle () {
+        for i in (0..<self.count).reversed() {
+            let ix1 = i
+            let ix2 = Int(arc4random_uniform(UInt32(i+1)))
+            (self[ix1], self[ix2]) = (self[ix2], self[ix1])
+        }
     }
 }

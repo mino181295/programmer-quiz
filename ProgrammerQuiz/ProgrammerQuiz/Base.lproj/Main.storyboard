@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cZ0-JR-ypV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cZ0-JR-ypV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -190,6 +190,9 @@
                                 <state key="normal" title="C++">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="answerOneTouchDown:" destination="jDa-6r-8mf" eventType="touchUpInside" id="qdh-VK-QXX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Th4-Gs-boe" userLabel="Answer2">
                                 <rect key="frame" x="19.5" y="464.5" width="337.5" height="100"/>
@@ -197,6 +200,9 @@
                                 <state key="normal" title="Java">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="answerTwoTouchDown:" destination="jDa-6r-8mf" eventType="touchUpInside" id="2tr-c5-FVS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxw-KK-KuY" userLabel="Answer3">
                                 <rect key="frame" x="19" y="572" width="337.5" height="100"/>
@@ -204,6 +210,9 @@
                                 <state key="normal" title="Python">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="answerThreeTouchDown:" destination="jDa-6r-8mf" eventType="touchUpInside" id="lBn-uU-I2P"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,10 +251,94 @@
                             <constraint firstItem="Th4-Gs-boe" firstAttribute="top" secondItem="a7B-OC-Hjb" secondAttribute="bottom" constant="8" id="tqE-Je-DWd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="questionLabel" destination="fQw-Ye-Ph8" id="wfG-Lz-wJN"/>
+                        <outlet property="questionNumberLabel" destination="Bnh-6R-TfW" id="grT-bq-WVU"/>
+                        <outlet property="scoreValueLabel" destination="NNT-EW-xzz" id="sdD-gQ-sHI"/>
+                        <outlet property="timeLabel" destination="oA7-HF-cd7" id="h67-5E-l2f"/>
+                        <outletCollection property="answersLabels" destination="a7B-OC-Hjb" collectionClass="NSMutableArray" id="hEa-ZP-vdA"/>
+                        <outletCollection property="answersLabels" destination="Th4-Gs-boe" collectionClass="NSMutableArray" id="Xkl-EH-f3f"/>
+                        <outletCollection property="answersLabels" destination="vxw-KK-KuY" collectionClass="NSMutableArray" id="A9k-qe-DXa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKm-LG-JYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1824.8" y="122.78860569715144"/>
+        </scene>
+        <!--FinalViewController-->
+        <scene sceneID="so2-SJ-JtR">
+            <objects>
+                <viewController storyboardIdentifier="Final" title="FinalViewController" id="imj-tx-BWc" customClass="FinalViewController" customModule="ProgrammerQuiz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="77k-f3-I7F"/>
+                        <viewControllerLayoutGuide type="bottom" id="xkv-qw-3I3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tOO-Ja-fdO" customClass="Fina">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyS-Bm-xmm">
+                                <rect key="frame" x="37" y="150" width="300" height="38.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="YOU WON">
+                                        <attributes>
+                                            <font key="NSFont" size="33" name=".SFNSDisplay-Bold"/>
+                                            <font key="NSOriginalFont" size="33" name=".SFNSDisplay-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your final score is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-9k-a7Z">
+                                <rect key="frame" x="118" y="196" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-4d-dRV">
+                                <rect key="frame" x="-0.5" y="225" width="375" height="200"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8V-su-Sw2">
+                                <rect key="frame" x="74.5" y="450.5" width="225" height="66.5"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save Score &amp; Quit">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTouchDown:" destination="imj-tx-BWc" eventType="touchUpInside" id="ncn-UW-3iq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ceR-9k-a7Z" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="0fk-PQ-pOq"/>
+                            <constraint firstItem="Bd1-4d-dRV" firstAttribute="height" secondItem="tOO-Ja-fdO" secondAttribute="height" multiplier="0.3" id="2Bl-kK-ufE"/>
+                            <constraint firstItem="yyS-Bm-xmm" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="5a2-63-pN2"/>
+                            <constraint firstItem="Bd1-4d-dRV" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="63b-Jq-2d0"/>
+                            <constraint firstItem="ceR-9k-a7Z" firstAttribute="top" secondItem="yyS-Bm-xmm" secondAttribute="bottom" constant="8" id="6lk-Ti-Nbv"/>
+                            <constraint firstItem="xkv-qw-3I3" firstAttribute="top" secondItem="c8V-su-Sw2" secondAttribute="bottom" constant="150" id="8TY-gP-7Cf"/>
+                            <constraint firstItem="yyS-Bm-xmm" firstAttribute="width" secondItem="tOO-Ja-fdO" secondAttribute="width" multiplier="0.8" id="Sij-b8-zRA"/>
+                            <constraint firstItem="Bd1-4d-dRV" firstAttribute="top" secondItem="ceR-9k-a7Z" secondAttribute="bottom" constant="8" id="aJ3-qQ-aVW"/>
+                            <constraint firstItem="yyS-Bm-xmm" firstAttribute="top" secondItem="77k-f3-I7F" secondAttribute="bottom" constant="130" id="ec9-7l-33h"/>
+                            <constraint firstItem="c8V-su-Sw2" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="scf-Re-3qe"/>
+                            <constraint firstItem="c8V-su-Sw2" firstAttribute="height" secondItem="tOO-Ja-fdO" secondAttribute="height" multiplier="0.1" id="t6K-PA-OhT"/>
+                            <constraint firstItem="c8V-su-Sw2" firstAttribute="width" secondItem="tOO-Ja-fdO" secondAttribute="width" multiplier="0.6" id="u70-Wc-5ZU"/>
+                            <constraint firstItem="Bd1-4d-dRV" firstAttribute="width" secondItem="tOO-Ja-fdO" secondAttribute="width" id="vxa-Z1-LhA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="yyS-Bm-xmm" id="tkb-DD-zUt"/>
+                        <outlet property="saveButton" destination="c8V-su-Sw2" id="RJ8-oU-P5m"/>
+                        <outlet property="scoreLabel" destination="Bd1-4d-dRV" id="Jga-uc-dBu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqG-Ee-nq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2704.8000000000002" y="122.78860569715144"/>
         </scene>
         <!--CreditsViewController-->
         <scene sceneID="baQ-I5-qkw">
