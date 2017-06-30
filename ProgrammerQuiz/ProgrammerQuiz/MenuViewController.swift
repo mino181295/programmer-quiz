@@ -14,10 +14,26 @@ class MenuViewController: UIViewController {
     @IBOutlet var highscoresButton: UIButton!
     @IBOutlet var creditsButton: UIButton!
     
+    public var questions : [Question] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupView()
+        
+        let preferences = UserDefaults.standard
+        let currentLevelKey = "CoreDataSetup"
+        if !preferences.bool(forKey: currentLevelKey) {
+            
+            DispatchQueue.main.async {
+                self.clearCoreData()
+                self.createData()
+            }
+            
+            preferences.set(true, forKey: currentLevelKey)
+        }
+        preferences.synchronize()
+            
         if entityIsEmpty(entity: "Question") {
             clearCoreData()
             createData()
@@ -26,13 +42,16 @@ class MenuViewController: UIViewController {
             createData()
         }
         
-        var questions = loadQuestions()
+        questions = loadQuestions()
         questions.shuffle()
         
         for question in questions {
             print(question.text!)
         }
+        
+    
     }
+        
     
     func setupButton(button : UIButton, cornerRadius : CGFloat, borderWidth : CGFloat, borderColor : UIColor){
         button.layer.cornerRadius = cornerRadius
