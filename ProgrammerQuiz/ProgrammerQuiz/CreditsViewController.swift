@@ -9,9 +9,8 @@
 import UIKit
 import MapKit
 
-
+//Class that implements a 2d location
 class Location {
-    
     var location : CLLocationCoordinate2D
     var subtitle : String
     var title : String
@@ -32,6 +31,7 @@ class CreditsViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var placeSelector: UISegmentedControl!
     @IBOutlet var descriptionLabel: UILabel!
     
+    //Setup of the 2 displayed locations
     var uniLocation = Location(longitude: 12.243219, latitude: 44.139761, title: "Via Sacchi 3, Cesena", subtitle: "Ingegneria e Scienze Informatiche", description: "App develpoed in Via Sacchi 3, Cesena. Ingegneria e scienze informatiche.")
     var homeLocation = Location(longitude: 12.198461, latitude: 44.360398, title: "Vicolo del Merlo 105, Ravenna", subtitle: "Home", description: "Lives in Vicolo del Merlo 105, Ravenna.")
     
@@ -40,7 +40,6 @@ class CreditsViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupImage()
-        
         placeSelector.selectedSegmentIndex = -1;
     }
     
@@ -53,7 +52,7 @@ class CreditsViewController: UIViewController, MKMapViewDelegate {
         profileImage.layer.cornerRadius = profileImage.bounds.height/2
         profileImage.clipsToBounds = true
     }
-    
+    //Selector event handler
     @IBAction func controlValueChanged(_ sender: Any) {
         if (placeSelector.selectedSegmentIndex == 0){
             updatePosition(location: uniLocation, zoomLevel: zoomLevel)
@@ -65,22 +64,21 @@ class CreditsViewController: UIViewController, MKMapViewDelegate {
     }
     
     func setupMap() {
-        
+        //Creating the home annotation
         let homeAnnotation = MKPointAnnotation()
         homeAnnotation.coordinate = homeLocation.location
         homeAnnotation.title = homeLocation.title
         homeAnnotation.subtitle = homeLocation.subtitle
         mapView.addAnnotation(homeAnnotation)
-        
+        //Creating the uni annotation
         let uniAnnotation = MKPointAnnotation()
         uniAnnotation.coordinate = uniLocation.location
         uniAnnotation.title = uniLocation.title
         uniAnnotation.subtitle = uniLocation.subtitle
         mapView.addAnnotation(uniAnnotation)
-        
-        
+        //Inital setup of the location
         if (placeSelector.selectedSegmentIndex == 0){
-           updatePosition(location: uniLocation, zoomLevel: zoomLevel)
+            updatePosition(location: uniLocation, zoomLevel: zoomLevel)
             descriptionLabel.text = uniLocation.description
         } else if (placeSelector.selectedSegmentIndex == 1) {
             updatePosition(location: homeLocation, zoomLevel: zoomLevel)

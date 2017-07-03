@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "scoreCell"
 
-
+//Collection view to store the scores
 class ScoreCell: UICollectionViewCell {
     
     @IBOutlet var ordinalLabel: UILabel!
@@ -19,21 +19,32 @@ class ScoreCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     
     func convertDate(data: Date) -> String {
-    
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yy"
         
+        let calendar = NSCalendar.current
+        
+        let date1 = calendar.startOfDay(for: data)
+        let date2 = calendar.startOfDay(for: Date())
+        
+        let components = calendar.dateComponents([.hour], from: date1, to: date2)
+        let formatter = DateFormatter()
+        let hours = components.hour!
+        
+        if (hours < 6) {
+            formatter.dateFormat = "HH:mm"
+        } else {
+            formatter.dateFormat = "dd/MM/yy"
+        }
         return formatter.string(from: data)
     }
 }
 
 class HighscoresCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
+    //List of the scores
     var scores : [Score]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //Gets the scores from coredata
         scores = self.loadHighScores()
     }
 
@@ -63,6 +74,5 @@ class HighscoresCollectionViewController: UICollectionViewController, UICollecti
     
         return cell
     }
-
 }
 

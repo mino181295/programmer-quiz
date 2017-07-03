@@ -44,8 +44,10 @@ class FinalViewController: UIViewController, UITextFieldDelegate {
         
         if (nameText.text != ""){
             goToRoot()
+            //Saves high score in CoreData
             saveHighScore(scoreValue: Int32(score!), date: NSDate(),name: name!)
         } else {
+            //Open alert for input warning
             let alert = UIAlertController(title: "Name warning", message: "You didn't put the name for the highscore", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -63,8 +65,7 @@ class FinalViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func quitTouchDown(_ sender: Any) {
         goToRoot()
-    }
-    
+    }    
     
     func goToRoot() {
         self.dismiss(animated: true, completion: {})

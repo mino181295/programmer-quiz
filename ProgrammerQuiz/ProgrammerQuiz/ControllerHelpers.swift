@@ -6,7 +6,6 @@
 //  Copyright © 2017 Matteo Minardi. All rights reserved.
 //
 
-import Foundation
 import CoreData
 import UIKit
 
@@ -86,10 +85,7 @@ extension MenuViewController {
             
             addQuestion(questionId: 18, questionText: "If p and q are assigned the values 2 and 3 respectively then the statement p = q++", questionScore: 40, correctAnswer: "p=3", answer2: "p=4", answer3: "error")
             
-            
-            
-            
-            
+            //Adds all the objects then saves the context
             do {
                 try(context?.save())
             } catch let err {
@@ -192,9 +188,8 @@ extension FinalViewController {
     public var context : NSManagedObjectContext? {
         return delegate?.managedObjectContext
     }
-    
+    //Saves high score in core data
     func saveHighScore(scoreValue: Int32, date: NSDate, name: String ){
-        
         let score = NSEntityDescription.insertNewObject(forEntityName: "Score", into: context!) as! Score
         score.value = scoreValue
         score.date = date
@@ -216,7 +211,7 @@ extension HighscoresCollectionViewController {
     public var context : NSManagedObjectContext? {
         return delegate?.managedObjectContext
     }
-    
+    //Returns the ordered scores from core data
     public func loadHighScores() -> [Score]{
         if context != nil {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Score")
