@@ -114,7 +114,7 @@
         <!--GameViewController-->
         <scene sceneID="DMh-iK-LUX">
             <objects>
-                <viewController id="jDa-6r-8mf" userLabel="GameViewController" customClass="GameViewController" customModule="ProgrammerQuiz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Game" id="jDa-6r-8mf" userLabel="GameViewController" customClass="GameViewController" customModule="ProgrammerQuiz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FDg-j4-ySl"/>
                         <viewControllerLayoutGuide type="bottom" id="J9m-41-eAg"/>
@@ -278,38 +278,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyS-Bm-xmm">
-                                <rect key="frame" x="37" y="150" width="300" height="38.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="YOU WON">
-                                        <attributes>
-                                            <font key="NSFont" size="33" name=".SFNSDisplay-Bold"/>
-                                            <font key="NSOriginalFont" size="33" name=".SFNSDisplay-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <rect key="frame" x="37" y="150" width="300" height="66.5"/>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your final score is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-9k-a7Z">
-                                <rect key="frame" x="118" y="196" width="139" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your final score is " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceR-9k-a7Z" userLabel="textLabel">
+                                <rect key="frame" x="118" y="224" width="139" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="rpk-N3-a36"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bd1-4d-dRV">
-                                <rect key="frame" x="-0.5" y="225" width="375" height="200"/>
+                                <rect key="frame" x="-0.5" y="252" width="375" height="200"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8V-su-Sw2">
-                                <rect key="frame" x="74.5" y="450.5" width="225" height="66.5"/>
+                                <rect key="frame" x="75" y="550.5" width="225" height="66.5"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save Score &amp; Quit">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="saveTouchDown:" destination="imj-tx-BWc" eventType="touchUpInside" id="ncn-UW-3iq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlf-Ny-X39" userLabel="Quit Button">
+                                <rect key="frame" x="75" y="476" width="225" height="66.5"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Quit without saving">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="quitTouchDown:" destination="imj-tx-BWc" eventType="touchUpInside" id="tdY-DP-PYE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -320,10 +325,15 @@
                             <constraint firstItem="yyS-Bm-xmm" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="5a2-63-pN2"/>
                             <constraint firstItem="Bd1-4d-dRV" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="63b-Jq-2d0"/>
                             <constraint firstItem="ceR-9k-a7Z" firstAttribute="top" secondItem="yyS-Bm-xmm" secondAttribute="bottom" constant="8" id="6lk-Ti-Nbv"/>
-                            <constraint firstItem="xkv-qw-3I3" firstAttribute="top" secondItem="c8V-su-Sw2" secondAttribute="bottom" constant="150" id="8TY-gP-7Cf"/>
+                            <constraint firstItem="xkv-qw-3I3" firstAttribute="top" secondItem="c8V-su-Sw2" secondAttribute="bottom" constant="50" id="8TY-gP-7Cf"/>
+                            <constraint firstItem="yyS-Bm-xmm" firstAttribute="height" secondItem="tOO-Ja-fdO" secondAttribute="height" multiplier="0.1" id="Bni-fc-Pzf"/>
+                            <constraint firstItem="zlf-Ny-X39" firstAttribute="width" secondItem="tOO-Ja-fdO" secondAttribute="width" multiplier="0.6" id="EDH-jI-gtn"/>
                             <constraint firstItem="yyS-Bm-xmm" firstAttribute="width" secondItem="tOO-Ja-fdO" secondAttribute="width" multiplier="0.8" id="Sij-b8-zRA"/>
+                            <constraint firstItem="c8V-su-Sw2" firstAttribute="top" secondItem="zlf-Ny-X39" secondAttribute="bottom" constant="8" id="YnJ-Mt-Zk8"/>
                             <constraint firstItem="Bd1-4d-dRV" firstAttribute="top" secondItem="ceR-9k-a7Z" secondAttribute="bottom" constant="8" id="aJ3-qQ-aVW"/>
                             <constraint firstItem="yyS-Bm-xmm" firstAttribute="top" secondItem="77k-f3-I7F" secondAttribute="bottom" constant="130" id="ec9-7l-33h"/>
+                            <constraint firstItem="zlf-Ny-X39" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="jge-H9-4BJ"/>
+                            <constraint firstItem="zlf-Ny-X39" firstAttribute="height" secondItem="tOO-Ja-fdO" secondAttribute="height" multiplier="0.1" id="mnq-SP-L5t"/>
                             <constraint firstItem="c8V-su-Sw2" firstAttribute="centerX" secondItem="tOO-Ja-fdO" secondAttribute="centerX" id="scf-Re-3qe"/>
                             <constraint firstItem="c8V-su-Sw2" firstAttribute="height" secondItem="tOO-Ja-fdO" secondAttribute="height" multiplier="0.1" id="t6K-PA-OhT"/>
                             <constraint firstItem="c8V-su-Sw2" firstAttribute="width" secondItem="tOO-Ja-fdO" secondAttribute="width" multiplier="0.6" id="u70-Wc-5ZU"/>
@@ -331,6 +341,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="quitButton" destination="zlf-Ny-X39" id="hcl-Ts-55F"/>
                         <outlet property="resultLabel" destination="yyS-Bm-xmm" id="tkb-DD-zUt"/>
                         <outlet property="saveButton" destination="c8V-su-Sw2" id="RJ8-oU-P5m"/>
                         <outlet property="scoreLabel" destination="Bd1-4d-dRV" id="Jga-uc-dBu"/>

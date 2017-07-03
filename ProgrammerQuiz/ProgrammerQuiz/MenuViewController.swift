@@ -15,8 +15,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var creditsButton: UIButton!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
         setupView()
         
         let preferences = UserDefaults.standard
@@ -27,7 +26,6 @@ class MenuViewController: UIViewController {
                 self.clearCoreData()
                 self.createData()
             }
-            
             preferences.set(true, forKey: currentLevelKey)
         }
         preferences.synchronize()
@@ -35,10 +33,8 @@ class MenuViewController: UIViewController {
     }
         
     
-    func setupButton(button : UIButton, cornerRadius : CGFloat, borderWidth : CGFloat, borderColor : UIColor){
+    func setupButton(button : UIButton, cornerRadius : CGFloat){
         button.layer.cornerRadius = cornerRadius
-        button.layer.borderWidth = borderWidth
-        button.layer.borderColor = borderColor.cgColor
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,9 +44,9 @@ class MenuViewController: UIViewController {
     }
 
     func setupView() {
-        setupButton(button: playButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
-        setupButton(button: highscoresButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
-        setupButton(button: creditsButton, cornerRadius: 5, borderWidth: 1, borderColor: UIColor.lightGray)
+        setupButton(button: playButton, cornerRadius: 5)
+        setupButton(button: highscoresButton, cornerRadius: 5)
+        setupButton(button: creditsButton, cornerRadius: 5)
     }
     
 }

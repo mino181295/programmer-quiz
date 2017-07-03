@@ -118,15 +118,21 @@ class GameViewController: UIViewController {
     func correct(){
         timer.invalidate()
         remainingTime = 15.0
-        setupNewQuestion(index: current)
         
         score += Int(currentQuestion.scoreValue)
         scoreValueLabel.text = String(score)
+        
+        if (current < questions.count) {
+            setupNewQuestion(index: current)
+        } else {
+            presentFinalViewController(isWin: true)
+        }
+        
     }
     
     func lose(){
         timer.invalidate()
-        presentViewController(viewControllerName: "Final", isWin: false)
+        presentFinalViewController(isWin: false)
         
     }
     
@@ -139,14 +145,16 @@ class GameViewController: UIViewController {
         }
     }
     
-    func presentViewController(viewControllerName : String, isWin : Bool){
+    func presentFinalViewController(isWin : Bool){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: viewControllerName) as! FinalViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "Final") as! FinalViewController
         
-        controller.label = isWin ? "YOU WIN" : "YOU LOSE"
+        controller.label = isWin ? "YOU WON" : "YOU LOST"
         controller.score = score
         
         self.present(controller, animated: true, completion: nil)
+        
+        let _ = self.navigationController?.popToRootViewController(animated: false)
     }
     
 }

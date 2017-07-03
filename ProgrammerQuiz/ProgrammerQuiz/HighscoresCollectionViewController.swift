@@ -28,16 +28,20 @@ class ScoreCell: UICollectionViewCell {
 
 class HighscoresCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let scores : [Int] = [2000, 300, 10]
-    let date : [Date] = [Date(timeIntervalSinceReferenceDate: -123456789.0), Date(timeIntervalSinceReferenceDate: -1236789.0), Date(timeIntervalSinceReferenceDate: -156789.0)]
-
+    var scores : [Score]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        scores = self.loadHighScores()
+    }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return scores.count
+        return scores!.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,8 +56,8 @@ class HighscoresCollectionViewController: UICollectionViewController, UICollecti
         }
     
         cell.ordinalLabel.text = String(describing: i + 1) + "."
-        cell.scoreLabel.text = String(scores[i])
-        cell.dateValue.text = cell.convertDate(data: date[i])
+        cell.scoreLabel.text = String(scores[i].value)
+        cell.dateValue.text = cell.convertDate(data: scores[i].date as! Date)
     
         return cell
     }
