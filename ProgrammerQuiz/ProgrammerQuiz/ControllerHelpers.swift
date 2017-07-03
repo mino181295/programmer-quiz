@@ -193,11 +193,12 @@ extension FinalViewController {
         return delegate?.managedObjectContext
     }
     
-    func saveHighScore(scoreValue: Int32, date: NSDate ){
+    func saveHighScore(scoreValue: Int32, date: NSDate, name: String ){
         
         let score = NSEntityDescription.insertNewObject(forEntityName: "Score", into: context!) as! Score
         score.value = scoreValue
         score.date = date
+        score.name = name
             
         do {
             try(context?.save())

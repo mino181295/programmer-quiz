@@ -14,11 +14,12 @@
     </entity>
     <entity name="Score" representedClassName=".Score" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
         <element name="Answer" positionX="81" positionY="-27" width="128" height="103"/>
         <element name="Question" positionX="-155" positionY="-27" width="128" height="103"/>
-        <element name="Score" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="Score" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>

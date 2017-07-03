@@ -20,9 +20,9 @@
 		3322DF021F02382400FC96BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3322DF001F02382400FC96BF /* LaunchScreen.storyboard */; };
 		3322DF0C1F02527000FC96BF /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3322DF0B1F02527000FC96BF /* CreditsViewController.swift */; };
 		3378BA081F0679F400621530 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378BA071F0679F400621530 /* GameViewController.swift */; };
-		3378BA0F1F0688E000621530 /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378BA0D1F0688E000621530 /* Score+CoreDataClass.swift */; };
-		3378BA101F0688E000621530 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378BA0E1F0688E000621530 /* Score+CoreDataProperties.swift */; };
 		3378BA121F06917700621530 /* FinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378BA111F06917700621530 /* FinalViewController.swift */; };
+		337C80711F0A4A4E0015E175 /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C806F1F0A4A4E0015E175 /* Score+CoreDataClass.swift */; };
+		337C80721F0A4A4E0015E175 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C80701F0A4A4E0015E175 /* Score+CoreDataProperties.swift */; };
 		339AA4AA1F06478C007B6ADD /* ControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AA4A91F06478C007B6ADD /* ControllerHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,9 +42,9 @@
 		3322DF031F02382400FC96BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3322DF0B1F02527000FC96BF /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		3378BA071F0679F400621530 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		3378BA0D1F0688E000621530 /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3378BA0E1F0688E000621530 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3378BA111F06917700621530 /* FinalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalViewController.swift; sourceTree = "<group>"; };
+		337C806F1F0A4A4E0015E175 /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
+		337C80701F0A4A4E0015E175 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		339AA4A91F06478C007B6ADD /* ControllerHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,8 +78,8 @@
 		3322DEF31F02382400FC96BF /* ProgrammerQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				3378BA0D1F0688E000621530 /* Score+CoreDataClass.swift */,
-				3378BA0E1F0688E000621530 /* Score+CoreDataProperties.swift */,
+				337C806F1F0A4A4E0015E175 /* Score+CoreDataClass.swift */,
+				337C80701F0A4A4E0015E175 /* Score+CoreDataProperties.swift */,
 				3317C5021F02925D00E7E83D /* Question+CoreDataClass.swift */,
 				3317C5031F02925D00E7E83D /* Question+CoreDataProperties.swift */,
 				3317C5041F02925D00E7E83D /* Answer+CoreDataClass.swift */,
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3378BA0F1F0688E000621530 /* Score+CoreDataClass.swift in Sources */,
+				337C80721F0A4A4E0015E175 /* Score+CoreDataProperties.swift in Sources */,
 				3378BA121F06917700621530 /* FinalViewController.swift in Sources */,
 				3322DEF71F02382400FC96BF /* MenuViewController.swift in Sources */,
 				3317C5061F02925D00E7E83D /* Question+CoreDataClass.swift in Sources */,
@@ -180,7 +180,7 @@
 				339AA4AA1F06478C007B6ADD /* ControllerHelpers.swift in Sources */,
 				3317C5081F02925D00E7E83D /* Answer+CoreDataClass.swift in Sources */,
 				3322DEF51F02382400FC96BF /* AppDelegate.swift in Sources */,
-				3378BA101F0688E000621530 /* Score+CoreDataProperties.swift in Sources */,
+				337C80711F0A4A4E0015E175 /* Score+CoreDataClass.swift in Sources */,
 				3317C4FE1F02779200E7E83D /* HighscoresCollectionViewController.swift in Sources */,
 				3317C5071F02925D00E7E83D /* Question+CoreDataProperties.swift in Sources */,
 				3322DEFD1F02382400FC96BF /* ProgrammerQuiz.xcdatamodeld in Sources */,

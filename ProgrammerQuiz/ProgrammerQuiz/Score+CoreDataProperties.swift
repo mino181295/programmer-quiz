@@ -2,7 +2,7 @@
 //  Score+CoreDataProperties.swift
 //  ProgrammerQuiz
 //
-//  Created by Matteo Minardi on 30/06/17.
+//  Created by Matteo Minardi on 03/07/17.
 //  Copyright © 2017 Matteo Minardi. All rights reserved.
 //
 
@@ -16,7 +16,8 @@ extension Score {
         return NSFetchRequest<Score>(entityName: "Score");
     }
 
-    @NSManaged public var value: Int32
     @NSManaged public var date: NSDate?
+    @NSManaged public var value: Int32
+    @NSManaged public var name: String?
 
 }

@@ -16,6 +16,7 @@ class ScoreCell: UICollectionViewCell {
     @IBOutlet var ordinalLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var dateValue: UILabel!
+    @IBOutlet var nameLabel: UILabel!
     
     func convertDate(data: Date) -> String {
     
@@ -58,6 +59,7 @@ class HighscoresCollectionViewController: UICollectionViewController, UICollecti
         cell.ordinalLabel.text = String(describing: i + 1) + "."
         cell.scoreLabel.text = String(scores[i].value)
         cell.dateValue.text = cell.convertDate(data: scores[i].date as! Date)
+        cell.nameLabel.text = scores[i].name
     
         return cell
     }
