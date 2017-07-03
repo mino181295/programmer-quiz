@@ -30,6 +30,7 @@ class FinalViewController: UIViewController, UITextFieldDelegate {
         resultLabel.textAlignment = .center
         
         nameText.delegate = self
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,4 +69,5 @@ class FinalViewController: UIViewController, UITextFieldDelegate {
     func goToRoot() {
         self.dismiss(animated: true, completion: {})
     }
+
 }
