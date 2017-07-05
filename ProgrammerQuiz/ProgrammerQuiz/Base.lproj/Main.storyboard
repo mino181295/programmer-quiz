@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Ms-4j-ZMD">
-                                <rect key="frame" x="35" y="193.5" width="304" height="31"/>
+                                <rect key="frame" x="35" y="219.5" width="304" height="31"/>
                                 <connections>
                                     <action selector="onSliderChange:" destination="hnv-EJ-FGe" eventType="valueChanged" id="lDJ-QJ-k22"/>
                                 </connections>
@@ -46,20 +46,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-xa-rJI">
-                                <rect key="frame" x="170.5" y="597" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                                <rect key="frame" x="37.5" y="560.5" width="300" height="66.5"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="savePressed:" destination="hnv-EJ-FGe" eventType="touchUpInside" id="rbN-pl-H6L"/>
+                                    <action selector="savePressed:" destination="hnv-EJ-FGe" eventType="touchUpInside" id="Buk-ws-Z0x"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T0a-6u-fla" firstAttribute="top" secondItem="iDT-xa-rJI" secondAttribute="bottom" constant="40" id="ADr-Rp-0X4"/>
-                            <constraint firstItem="iDT-xa-rJI" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="BBK-2t-vH8"/>
+                            <constraint firstItem="iDT-xa-rJI" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="DBE-4u-Ner"/>
                             <constraint firstItem="CtD-cG-zmg" firstAttribute="top" secondItem="089-lc-Pr1" secondAttribute="bottom" constant="10" id="Hq4-2z-kR3"/>
                             <constraint firstItem="CtD-cG-zmg" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="Jmc-gA-Apv"/>
-                            <constraint firstItem="2Ms-4j-ZMD" firstAttribute="top" secondItem="CtD-cG-zmg" secondAttribute="bottom" constant="10" id="bHa-EA-zFJ"/>
+                            <constraint firstItem="iDT-xa-rJI" firstAttribute="width" secondItem="Wgz-cf-ncF" secondAttribute="width" multiplier="0.8" id="OEd-JO-z0e"/>
+                            <constraint firstItem="iDT-xa-rJI" firstAttribute="height" secondItem="Wgz-cf-ncF" secondAttribute="height" multiplier="0.1" id="SRd-7R-TM0"/>
+                            <constraint firstItem="2Ms-4j-ZMD" firstAttribute="top" secondItem="CtD-cG-zmg" secondAttribute="bottom" constant="36" id="bHa-EA-zFJ"/>
                             <constraint firstItem="2Ms-4j-ZMD" firstAttribute="width" secondItem="Wgz-cf-ncF" secondAttribute="width" multiplier="0.8" id="bjV-xi-mwK"/>
                             <constraint firstItem="089-lc-Pr1" firstAttribute="top" secondItem="Vli-YR-tJY" secondAttribute="bottom" constant="30" id="l1x-Qb-Iq1"/>
                             <constraint firstItem="2Ms-4j-ZMD" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="lAR-8H-0tQ"/>
