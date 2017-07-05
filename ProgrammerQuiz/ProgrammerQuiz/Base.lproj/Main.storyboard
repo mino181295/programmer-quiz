@@ -48,6 +48,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-xa-rJI">
                                 <rect key="frame" x="37.5" y="560.5" width="300" height="66.5"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -172,7 +173,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Programmer Quiz" id="eSB-rK-5fs">
-                        <barButtonItem key="rightBarButtonItem" image="settings_icon" style="plain" id="TKK-N6-AeA">
+                        <barButtonItem key="rightBarButtonItem" image="settings_icon" style="done" id="TKK-N6-AeA">
                             <connections>
                                 <segue destination="hnv-EJ-FGe" kind="show" id="AjB-6t-7km"/>
                             </connections>
