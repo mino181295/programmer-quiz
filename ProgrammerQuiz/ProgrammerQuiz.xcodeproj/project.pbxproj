@@ -24,6 +24,7 @@
 		337C80711F0A4A4E0015E175 /* Score+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C806F1F0A4A4E0015E175 /* Score+CoreDataClass.swift */; };
 		337C80721F0A4A4E0015E175 /* Score+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337C80701F0A4A4E0015E175 /* Score+CoreDataProperties.swift */; };
 		339AA4AA1F06478C007B6ADD /* ControllerHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339AA4A91F06478C007B6ADD /* ControllerHelpers.swift */; };
+		33FD18D61F0CC5AB00A80A12 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD18D51F0CC5AB00A80A12 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		337C806F1F0A4A4E0015E175 /* Score+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataClass.swift"; sourceTree = "<group>"; };
 		337C80701F0A4A4E0015E175 /* Score+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Score+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		339AA4A91F06478C007B6ADD /* ControllerHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerHelpers.swift; sourceTree = "<group>"; };
+		33FD18D51F0CC5AB00A80A12 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				3322DEF41F02382400FC96BF /* AppDelegate.swift */,
 				3322DEF81F02382400FC96BF /* Main.storyboard */,
 				3378BA071F0679F400621530 /* GameViewController.swift */,
+				33FD18D51F0CC5AB00A80A12 /* SettingsViewController.swift */,
 				3378BA111F06917700621530 /* FinalViewController.swift */,
 				3322DEF61F02382400FC96BF /* MenuViewController.swift */,
 				339AA4A91F06478C007B6ADD /* ControllerHelpers.swift */,
@@ -180,6 +183,7 @@
 				339AA4AA1F06478C007B6ADD /* ControllerHelpers.swift in Sources */,
 				3317C5081F02925D00E7E83D /* Answer+CoreDataClass.swift in Sources */,
 				3322DEF51F02382400FC96BF /* AppDelegate.swift in Sources */,
+				33FD18D61F0CC5AB00A80A12 /* SettingsViewController.swift in Sources */,
 				337C80711F0A4A4E0015E175 /* Score+CoreDataClass.swift in Sources */,
 				3317C4FE1F02779200E7E83D /* HighscoresCollectionViewController.swift in Sources */,
 				3317C5071F02925D00E7E83D /* Question+CoreDataProperties.swift in Sources */,

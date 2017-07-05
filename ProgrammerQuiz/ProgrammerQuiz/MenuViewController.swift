@@ -9,6 +9,8 @@
 import UIKit
 
 class MenuViewController: UIViewController {
+    
+    var defaultTime = 15
     //Storyboard Outlets
     @IBOutlet var playButton: UIButton!
     @IBOutlet var highscoresButton: UIButton!
@@ -29,7 +31,14 @@ class MenuViewController: UIViewController {
             preferences.set(true, forKey: currentLevelKey)
         }
         preferences.synchronize()
+        
+        if !settingsExist() {
+            createSettings()
+            print("Created")
+        }
         //Logic ready to setup
+        
+        
     }
     //Button creation
     func setupButton(button : UIButton, cornerRadius : CGFloat){
@@ -46,6 +55,22 @@ class MenuViewController: UIViewController {
         setupButton(button: playButton, cornerRadius: 5)
         setupButton(button: highscoresButton, cornerRadius: 5)
         setupButton(button: creditsButton, cornerRadius: 5)
-    }    
+    }
+    
+    func createSettings(){
+        let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("settings.data")
+        NSKeyedArchiver.archiveRootObject(Float(defaultTime), toFile: fileUrl.path)
+    }
+    
+    func settingsExist() -> Bool {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        let filePath = url.appendingPathComponent("settings.data")?.path
+        if FileManager.default.fileExists(atPath: filePath!) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 

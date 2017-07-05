@@ -12,6 +12,72 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SettingsViewController-->
+        <scene sceneID="Oet-9I-DKy">
+            <objects>
+                <viewController id="hnv-EJ-FGe" userLabel="SettingsViewController" customClass="SettingsViewController" customModule="ProgrammerQuiz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Vli-YR-tJY"/>
+                        <viewControllerLayoutGuide type="bottom" id="T0a-6u-fla"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wgz-cf-ncF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="5" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="2Ms-4j-ZMD">
+                                <rect key="frame" x="35" y="193.5" width="304" height="31"/>
+                                <connections>
+                                    <action selector="onSliderChange:" destination="hnv-EJ-FGe" eventType="valueChanged" id="lDJ-QJ-k22"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="089-lc-Pr1">
+                                <rect key="frame" x="-0.5" y="94" width="375" height="44.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtD-cG-zmg">
+                                <rect key="frame" x="0.0" y="148.5" width="375" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="oLU-g0-oXF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-xa-rJI">
+                                <rect key="frame" x="170.5" y="597" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="hnv-EJ-FGe" eventType="touchUpInside" id="rbN-pl-H6L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T0a-6u-fla" firstAttribute="top" secondItem="iDT-xa-rJI" secondAttribute="bottom" constant="40" id="ADr-Rp-0X4"/>
+                            <constraint firstItem="iDT-xa-rJI" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="BBK-2t-vH8"/>
+                            <constraint firstItem="CtD-cG-zmg" firstAttribute="top" secondItem="089-lc-Pr1" secondAttribute="bottom" constant="10" id="Hq4-2z-kR3"/>
+                            <constraint firstItem="CtD-cG-zmg" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="Jmc-gA-Apv"/>
+                            <constraint firstItem="2Ms-4j-ZMD" firstAttribute="top" secondItem="CtD-cG-zmg" secondAttribute="bottom" constant="10" id="bHa-EA-zFJ"/>
+                            <constraint firstItem="2Ms-4j-ZMD" firstAttribute="width" secondItem="Wgz-cf-ncF" secondAttribute="width" multiplier="0.8" id="bjV-xi-mwK"/>
+                            <constraint firstItem="089-lc-Pr1" firstAttribute="top" secondItem="Vli-YR-tJY" secondAttribute="bottom" constant="30" id="l1x-Qb-Iq1"/>
+                            <constraint firstItem="2Ms-4j-ZMD" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="lAR-8H-0tQ"/>
+                            <constraint firstItem="089-lc-Pr1" firstAttribute="width" secondItem="Wgz-cf-ncF" secondAttribute="width" id="rT2-nc-rtz"/>
+                            <constraint firstItem="CtD-cG-zmg" firstAttribute="width" secondItem="Wgz-cf-ncF" secondAttribute="width" id="ta9-3m-xcr"/>
+                            <constraint firstItem="089-lc-Pr1" firstAttribute="centerX" secondItem="Wgz-cf-ncF" secondAttribute="centerX" id="xre-Nf-G2P"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="cyT-et-mZH"/>
+                    <connections>
+                        <outlet property="timeLabel" destination="CtD-cG-zmg" id="ftk-fa-rld"/>
+                        <outlet property="timeSlider" destination="2Ms-4j-ZMD" id="Hl0-pi-rxj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="api-9j-5jO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1845.5999999999999" y="-534.78260869565224"/>
+        </scene>
         <!--MenuViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -100,7 +166,13 @@
                             <constraint firstItem="AuD-Nk-CTE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="juT-qJ-Yve"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Programmer Quiz" id="eSB-rK-5fs"/>
+                    <navigationItem key="navigationItem" title="Programmer Quiz" id="eSB-rK-5fs">
+                        <barButtonItem key="rightBarButtonItem" image="settings_icon" style="plain" id="TKK-N6-AeA">
+                            <connections>
+                                <segue destination="hnv-EJ-FGe" kind="show" id="AjB-6t-7km"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="creditsButton" destination="AuD-Nk-CTE" id="c5B-cm-TjR"/>
                         <outlet property="highscoresButton" destination="LbP-E6-JVO" id="rKP-T5-vAZ"/>
@@ -263,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKm-LG-JYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1847" y="123"/>
         </scene>
         <!--FinalViewController-->
         <scene sceneID="so2-SJ-JtR">
@@ -483,6 +555,11 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <view key="backgroundView" contentMode="scaleToFill" id="Biw-N9-Tjs">
+                            <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scoreCell" id="h6v-ub-2jo" customClass="ScoreCell" customModule="ProgrammerQuiz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
@@ -575,5 +652,6 @@
     </scenes>
     <resources>
         <image name="profile_image" width="2448" height="2448"/>
+        <image name="settings_icon" width="32" height="32"/>
     </resources>
 </document>

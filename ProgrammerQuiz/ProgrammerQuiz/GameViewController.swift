@@ -24,7 +24,8 @@ class GameViewController: UIViewController {
     var current = 0
     
     var timer : Timer!
-    var remainingTime : Float = 15.0
+    var remainingTime : Float!
+    var defaultTime: Int!
     
     
     override func viewDidLoad() {
@@ -32,6 +33,9 @@ class GameViewController: UIViewController {
         
         questions = loadQuestions()
         questions.shuffle()
+        
+        defaultTime = self.returnTimeFromSettings()
+        remainingTime = Float(defaultTime)
         
         gameSetup()
     }
@@ -117,7 +121,7 @@ class GameViewController: UIViewController {
     
     func correct(){
         timer.invalidate()
-        remainingTime = 15.0
+        remainingTime = Float(defaultTime)
         
         score += Int(currentQuestion.scoreValue)
         scoreValueLabel.text = String(score)
@@ -127,17 +131,15 @@ class GameViewController: UIViewController {
         } else {
             presentFinalViewController(isWin: true)
         }
-        
     }
     
     func lose(){
         timer.invalidate()
-        presentFinalViewController(isWin: false)
-        
+        presentFinalViewController(isWin: false)        
     }
     
     func updateTimer(){
-        remainingTime -= 0.01
+        remainingTime = remainingTime - 0.01
         if remainingTime <= 0 {
             lose()
         } else {
@@ -155,6 +157,17 @@ class GameViewController: UIViewController {
         self.present(controller, animated: true, completion: nil)
         
         let _ = self.navigationController?.popToRootViewController(animated: false)
+    }
+    
+    func returnTimeFromSettings() -> Int {
+        let fileUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("settings.data")
+        let object = NSKeyedUnarchiver.unarchiveObject(withFile: fileUrl.path)
+        
+        if let value = object as? Float {
+            return Int(value.rounded(.down))
+        } else {
+            return 15
+        }
     }
     
 }
